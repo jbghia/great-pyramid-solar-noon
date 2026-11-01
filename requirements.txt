@@ -1,0 +1,6 @@
+# Optional research dependencies inferred from imports, not original pinned versions.
+# Offline audit and unittest checks use only the Python standard library.
+skyfield
+astroquery
+numpy
+ephem

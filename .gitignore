@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+*.bsp
+hipparcos_vmag_lt_*.csv
+results/generated/

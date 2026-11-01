@@ -1,32 +1,27 @@
 # Reproduction status
 
-## Available evidence
+## Preservation
 
-The author supplied a 20-page manuscript and three Python source files. The bundle preserves the source files byte-for-byte; SHA-256 values are in `data/source_manifest.json`. The manuscript itself is not redistributed. Passing syntax or selected unit tests does not validate a historical ephemeris or reproduce published results.
+All three supplied scripts are in `original/`. Source text is preserved without scientific corrections; CRLF line endings are normalized to LF and a final newline is added. `data/source_manifest.json` distinguishes original uploaded byte hashes from normalized repository text hashes. Earlier descriptions of byte-for-byte preservation apply to the original ZIP bundle, not GitHub's normalized text files.
 
-## Blocking discrepancies
+## Unresolved manuscript/code differences
 
-1. **Solar model:** manuscript Sections 3.3-3.4 describe compact Meeus-style calculations and a truncated VSOP87D/Laskar comparison. The uploaded solar script uses Skyfield/DE422 and apparent coordinates. No compact-model or VSOP comparison script was supplied.
-2. **Solar implementation:** `solar_declination_deg` and the equation-of-time routine call `(EARTH + SUN).at(t).apparent()` rather than forming an Earth-observer-to-Sun observation. This is an unresolved code-review finding, not a corrected or executed solution.
-3. **Solar self-test:** a test requires the declination at JD 2451545.0 to be between -1 and +1 degree while labeling it an equinox check. The test epoch/expectation needs correction and independent verification.
-4. **Delta T:** the manuscript specifies an adopted 61,033 s; the original solar script defaults to a variable parabola with no fixed override. The stellar script uses one JD for both astrometric epoch and Earth rotation without an explicit TT/UT split.
-5. **Stellar data:** the manuscript describes Hipparcos J1991.25 inputs. Predefined tests in the script use manually entered approximate J2000-like positions; open searches use a downloaded cache when available.
-6. **Search refinement:** the manuscript describes refining interior minima. The original script uses grid minima only. Reported sub-grid precision is not verified by this implementation.
-7. **Catalogue fallback:** failure to obtain Hipparcos causes substitution of the small manual list. Such a run must not be represented as the manuscript's 93-star catalogue search.
-8. **Queen's Chamber:** the supplementary script advances from a transit by a full day before requesting the next transit, potentially skipping transits. It also labels directly passed PyEphem date values as TT without an explicit consistent TT/UT conversion. Retain its outputs as preliminary.
-9. **Missing artifacts:** no original catalogue snapshot, ephemeris kernel, environment lockfile, original generated result files, compact solar implementation, independent validation calculation, or figure-generation code was supplied.
+1. The manuscript describes a compact Meeus-style solar model and a truncated VSOP87D/Laskar comparison; the supplied solar script uses Skyfield/DE422. Neither generating compact code nor comparison code was supplied.
+2. The solar routines call `(EARTH + SUN).at(t).apparent()` instead of forming an Earth-observer-to-Sun observation. This is an unresolved review finding, not a corrected or executed ephemeris solution.
+3. The solar self-test treats JD 2451545.0 as an equinox-like declination check; its epoch/expectation needs independent verification and correction.
+4. The manuscript adopts Delta T = 61,033 s; the solar code defaults to a variable parabola. The stellar code uses one JD for astrometry and Earth rotation without an explicit TT/UT separation.
+5. Predefined stellar tests use approximate manually entered J2000-like data, while the manuscript describes Hipparcos J1991.25 inputs.
+6. The stellar script returns grid minima; the manuscript describes additional interior-minimum refinement.
+7. Catalogue failure silently substitutes a small manual star list. That fallback is not a verified 93-star Hipparcos search.
+8. The Queen's Chamber script advances a full day after each transit before requesting the next, potentially skipping transits. Its PyEphem date inputs and TT labels require consistent time-scale treatment. Results remain preliminary.
+9. The original catalogue cache, ephemeris kernel, environment lockfile, original generated outputs, and figure-generation code were not supplied.
 
-## What this edition establishes
+## Verified scope
 
-- Source syntax can be checked offline.
-- Original source checksums can be checked offline.
-- Selected declination/altitude, calendar, and vector-geometry routines can be unit tested.
-- Selected manuscript values are preserved as transcribed references only.
+Three normalized source-text hashes and syntax checks, plus nine selected offline geometry/calendar tests, passed locally. These are not independent astronomical validation. GitHub Actions execution must be checked separately.
 
-## What it does not establish
+Complete numerical reproduction of Tables 2-12 and Figures 1-4 has not been established. Transcribed manuscript values are explicitly separate from generated results. No physical alignment, historical intent, or statistical significance is newly established.
 
-Exact reproduction of Tables 2-12, Figures 1-4, catalogue completeness, physical shaft alignment, historical intent, or long-term astrometric accuracy. No scientific correction is silently substituted for an original calculation.
+## Further work
 
-## Required next implementation work
-
-Recover the exact generating scripts if available; otherwise label any replacement as reconstructed. Reconcile the solar models and coordinate definitions; use explicit TT for astrometry and UT for Earth rotation; remove silent catalogue fallback; archive catalogue inputs and checksums; implement/document refinement; verify sampling; run independent checks; compare every regenerated table and figure with the manuscript.
+Recover exact generating code or identify replacements as reconstructed; reconcile models and time scales; archive catalogue and environment inputs; remove silent fallback in a separately identified revised implementation; implement/document refinement; verify transit sampling; compare every regenerated table and figure; and perform independent long-term astronomical checks before a publication release.

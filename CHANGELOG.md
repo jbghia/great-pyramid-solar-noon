@@ -2,10 +2,10 @@
 
 ## Unreleased
 
-- Document the companion repository scope and reproducibility gaps.
-- Add manuscript conventions, artifact mapping, provenance notes, and a publication checklist.
-- Transcribe selected manuscript values as reference data, explicitly not regenerated outputs.
-- Document optional dependencies without claiming to reconstruct the original environment.
-- Prepare a separate companion bundle containing preserved scripts and offline checks; publishing those source and test files remains a separate step.
+- Publish all three supplied research scripts with source text preserved; normalize line endings and final newlines only.
+- Record original byte hashes and normalized source-text hashes separately.
+- Add offline source audit, nine selected routine tests, a local-check report, and GitHub Actions workflow.
+- Add methods, manuscript mapping, reproduction-gap documentation, provenance notes, and publication checklist.
+- Preserve selected manuscript values as transcribed references, not regenerated outputs.
 
-No scientific result is newly validated by these documentation changes. No release or DOI is assigned.
+No scientific corrections, full astronomical validation, publication release, DOI, or software-license selection are included.

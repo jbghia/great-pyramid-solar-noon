@@ -1,0 +1,10 @@
+{
+  "scope": "Offline checks only; not independent astronomical validation",
+  "source_text_hashes_checked": 3,
+  "syntax_checks_passed": 3,
+  "unit_tests_passed": 9,
+  "audit_command": "python scripts/audit_sources.py",
+  "test_command": "python -m unittest discover -s tests -v",
+  "network_dependent_reproduction": "not performed",
+  "github_actions_status": "not checked at preparation time"
+}

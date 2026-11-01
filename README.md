@@ -1,54 +1,51 @@
 # Great Pyramid solar-noon correspondences
 
-Companion research repository for *Solar-Noon Altitude Correspondences for the South-Directed Shafts of the Great Pyramid: A Reproducible Geometrical Baseline*.
+Companion repository for *Solar-Noon Altitude Correspondences for the South-Directed Shafts of the Great Pyramid: A Reproducible Geometrical Baseline*.
 
 ## Status
 
-Source-preservation and reproducibility-audit edition. This is NOT yet a verified reproduction of all manuscript tables and figures. Original uploaded scripts are preserved under `original/` in the accompanying repository bundle; source upload to GitHub is a separate publishing step. See `docs/reproduction_status.md` for the differences between the supplied code and manuscript.
-
-The study compares adopted shaft inclinations with solar meridian altitudes and uses the resulting dates to select nighttime stellar searches. A solar-date anchor is a right-ascension filter, not independent confirmation of a stellar altitude match. Assumed azimuth 180 degrees is not a measured physical shaft direction. Numerical correspondences do not demonstrate illumination, architectural intention, or historical significance.
+Source-preservation and reproducibility-audit edition, not yet a verified reproduction of every manuscript table and figure. All three supplied research scripts are included under `original/`. No scientific corrections have been applied. Repository text uses LF line endings and a final newline; original byte hashes and normalized text hashes are recorded separately in `data/source_manifest.json`.
 
 ## Contents
 
-- `original/`: the three supplied Python scripts, preserved byte-for-byte in the bundle.
-- `data/manuscript_reported/`: selected transcribed reference values, NOT regenerated calculations.
-- `docs/`: methods, known issues, provenance, table mapping, and publication checklist.
-- `scripts/audit_sources.py`: offline syntax and checksum audit.
-- `tests/`: offline tests of selected geometric/calendar routines; not an ephemeris validation.
-- `CITATION.cff`: repository citation metadata without an invented DOI or author name.
+- `original/`: supplied solar, stellar, and Queen's Chamber sensitivity scripts.
+- `scripts/audit_sources.py`: offline source-text integrity and syntax checks.
+- `tests/test_geometry.py`: nine offline checks of selected routines, not an ephemeris validation.
+- `.github/workflows/tests.yml`: runs the offline checks on GitHub Actions.
+- `data/manuscript_reported/`: selected manuscript values transcribed as references, not regenerated results.
+- `docs/`: methods, reproduction gaps, table mapping, publication checklist, and local-check report.
+- `requirements.txt`: optional dependencies inferred from imports, not the original pinned environment.
+- `CITATION.cff`: preliminary citation metadata; author details and publication release remain to be confirmed.
 
-## Local checks
+## Run offline checks
 
-Requires Python 3.10 or newer for the documented workflow. From the repository root:
+From the repository root with Python 3.10 or newer:
 
 ```sh
 python scripts/audit_sources.py
 python -m unittest discover -s tests -v
 ```
 
-These checks do not need external catalogues or ephemerides. They require the three files in `original/`.
+Three source-text checks and nine tests passed locally. This does not establish independent long-term astronomical accuracy or numerical reproduction of the paper. GitHub Actions results must be checked separately.
 
-## Original research scripts
-
-Create an isolated environment and install optional research dependencies:
+## Research dependencies and scripts
 
 ```sh
 python -m venv .venv
-# POSIX: source .venv/bin/activate
-# Windows PowerShell: .venv\Scripts\Activate.ps1
+# Activate the environment for your operating system.
 python -m pip install -r requirements.txt
 ```
 
-The original scripts are archived for inspection, not recommended as a publication-ready pipeline. The solar script loads `de422.bsp` at import time and has unresolved implementation/test issues. The stellar script can download a Hipparcos catalogue and silently fall back to a manual star list. The Queen's Chamber script has unresolved time-scale and sampling issues. Read the audit before executing or interpreting output.
+Read `docs/reproduction_status.md` before interpreting output. The solar script loads `de422.bsp` at import time and has unresolved implementation/test issues. The stellar script may download catalogue data and silently fall back to a small manual list. The supplementary Queen's Chamber calculation has unresolved sampling and time-scale issues. These original scripts are preserved for inspection, not endorsed as a publication-ready pipeline.
 
-Dependencies are not a lockfile and do not reconstruct the original execution environment. The ephemeris, original Hipparcos cache, original generated tables, and figure-generation scripts were not supplied. No network-dependent numerical run has been verified for this edition.
+The original catalogue snapshot, ephemeris kernel, original generated outputs, compact-model code, independent solar comparison code, and figure-generation scripts were not supplied. Dependencies are not a lockfile. No full network-dependent reproduction is claimed.
 
-## Citation and publication
+## Scientific scope
+
+The comparisons use adopted inclinations and idealized due-south directions, not measured complete shaft sightlines. Solar-date anchors constrain the nighttime search but do not independently confirm stellar altitude matches. Numerical correspondences do not demonstrate illumination, architectural intention, or historical significance.
+
+## Citation and license
 
 Repository: https://github.com/jbghia/great-pyramid-solar-noon
 
-Cite an exact reviewed commit or release, rather than implying the current default branch is immutable. No release or DOI has been created by this documentation. Confirm the paper author metadata and software/data licensing before the publication release. See `docs/publication_checklist.md`.
-
-## License
-
-No software license has been selected by the owner. Public visibility alone is not a license grant. Third-party catalogues and ephemerides retain their own terms. The paper PDF is not redistributed here.
+Cite an exact reviewed commit or release. No publication release or DOI is assigned. Author metadata and a software license require owner confirmation; no license grant is implied by public visibility. Third-party data retain their own terms. The paper PDF is not redistributed. See `docs/publication_checklist.md` before updating the paper's data-availability statement.

@@ -1,0 +1,29 @@
+[
+  {
+    "path": "original/pyramid_solar_alignment.py",
+    "bytes": 15704,
+    "sha256": "718b4267e8ff32084d17ea8af4071e5960f371ffd715d9378c155e666676c579",
+    "repository_text_bytes": 15705,
+    "repository_text_sha256": "89398b40cd92c4b8a0188a6f9801ca93b18bbf1e84abe1d0b4c465787e8c8f73",
+    "normalization": "CRLF to LF and a single final newline; no other source changes",
+    "git_blob_sha1": "07f5ab9edb60e27adee185a4b77564b425d95047"
+  },
+  {
+    "path": "original/stellar_alignment_search.py",
+    "bytes": 30982,
+    "sha256": "8d7e92b080263ea999a7b9eecb62bf307ad0e3f247b8c713d3991726d79880d8",
+    "repository_text_bytes": 29918,
+    "repository_text_sha256": "3ecaa2e7194d0d90800ffeed3deb5b2c9074ca0e3e8fc970a1a5041f8a02e3e4",
+    "normalization": "CRLF to LF and a single final newline; no other source changes",
+    "git_blob_sha1": "ad18e9893a86736b374edcab23962463b1cc7ffc"
+  },
+  {
+    "path": "original/queens_chamber_solar_robustness.py",
+    "bytes": 7652,
+    "sha256": "5557a70137c99464a82af2e5becab774ede7228a5bab795ffb552adeda236ddb",
+    "repository_text_bytes": 7423,
+    "repository_text_sha256": "fa945ee1e2a19ba07795a5ce80d2de248353bbb21b7564c1f61709918c5747e3",
+    "normalization": "CRLF to LF and a single final newline; no other source changes",
+    "git_blob_sha1": "5c36811ad243dbc0c8118c9faf846e137744bdfc"
+  }
+]

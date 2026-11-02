@@ -1,7 +1,5 @@
-# Data provenance
+# Data inputs and reference values
 
-`manuscript_reported/` contains selected values transcribed from the supplied manuscript, not regenerated calculations or an input star catalogue. Do not use these values to tune a model to the reported answers.
+The research scripts require a local historical-coverage BSP and an archived catalogue with documented ICRS position epochs and proper motions. Actual selected rows and input hashes are recorded in run metadata. No catalogue snapshot or kernel is supplied here.
 
-`source_manifest.json` records original uploaded byte counts/hashes and normalized repository text counts/hashes. GitHub source text uses LF and a single final newline. Original byte hashes are provenance records, not the expected hashes of normalized text.
-
-The original Hipparcos cache, ephemeris kernel, original generated results, and execution environment were not supplied. No catalogue rows or original package versions have been invented.
+`manuscript_reported/` contains transcribed reference values, not regenerated results. The source manifest supports file integrity, not astronomical validation. Do not use reference numbers to tune an implementation to a preferred answer.

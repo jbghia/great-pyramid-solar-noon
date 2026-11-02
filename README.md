@@ -1,51 +1,38 @@
 # Great Pyramid solar-noon correspondences
 
-Companion repository for *Solar-Noon Altitude Correspondences for the South-Directed Shafts of the Great Pyramid: A Reproducible Geometrical Baseline*.
+Research software for solar meridian-altitude dates at Giza and stellar comparisons on the resulting nighttime windows.
 
-## Status
+## Run
 
-Source-preservation and reproducibility-audit edition, not yet a verified reproduction of every manuscript table and figure. All three supplied research scripts are included under `original/`. No scientific corrections have been applied. Repository text uses LF line endings and a final newline; original byte hashes and normalized text hashes are recorded separately in `data/source_manifest.json`.
-
-## Contents
-
-- `original/`: supplied solar, stellar, and Queen's Chamber sensitivity scripts.
-- `scripts/audit_sources.py`: offline source-text integrity and syntax checks.
-- `tests/test_geometry.py`: nine offline checks of selected routines, not an ephemeris validation.
-- `.github/workflows/tests.yml`: runs the offline checks on GitHub Actions.
-- `data/manuscript_reported/`: selected manuscript values transcribed as references, not regenerated results.
-- `docs/`: methods, reproduction gaps, table mapping, publication checklist, and local-check report.
-- `requirements.txt`: optional dependencies inferred from imports, not the original pinned environment.
-- `CITATION.cff`: preliminary citation metadata; author details and publication release remain to be confirmed.
-
-## Run offline checks
-
-From the repository root with Python 3.10 or newer:
+Use Python 3.10+ and keep the three root scripts together:
 
 ```sh
-python scripts/audit_sources.py
-python -m unittest discover -s tests -v
-```
-
-Three source-text checks and nine tests passed locally. This does not establish independent long-term astronomical accuracy or numerical reproduction of the paper. GitHub Actions results must be checked separately.
-
-## Research dependencies and scripts
-
-```sh
-python -m venv .venv
-# Activate the environment for your operating system.
 python -m pip install -r requirements.txt
+python pyramid_solar_alignment.py --ephemeris data/de422.bsp
+python stellar_alignment_search.py --ephemeris data/de422.bsp --catalogue data/hipparcos.csv --windows-json results/solar/stellar_windows.json
+python queens_chamber_solar_robustness.py
 ```
 
-Read `docs/reproduction_status.md` before interpreting output. The solar script loads `de422.bsp` at import time and has unresolved implementation/test issues. The stellar script may download catalogue data and silently fall back to a small manual list. The supplementary Queen's Chamber calculation has unresolved sampling and time-scale issues. These original scripts are preserved for inspection, not endorsed as a publication-ready pipeline.
+Supply a local historical-coverage BSP and archived catalogue CSV. No data are downloaded or substituted. Required columns: HIP, RAICRS, DEICRS, pmRA, pmDE, Vmag. Optional epoch_jyear defaults to 1991.25; name is a label. ICRS positions are decimal degrees; proper motions are mas/year, with pmRA including cos(dec).
 
-The original catalogue snapshot, ephemeris kernel, original generated outputs, compact-model code, independent solar comparison code, and figure-generation scripts were not supplied. Dependencies are not a lockfile. No full network-dependent reproduction is claimed.
+## Model
 
-## Scientific scope
+Skyfield evaluates apparent geocentric solar coordinates and apparent topocentric stellar directions without refraction. Solar parallax is excluded; stellar parallax and radial velocity are zero. The main stages share the kernel and fixed TT-UT1, 61,033 s by default. This is not a compact Meeus geometric approximation. The manuscript must describe the actual executed model.
 
-The comparisons use adopted inclinations and idealized due-south directions, not measured complete shaft sightlines. Solar-date anchors constrain the nighttime search but do not independently confirm stellar altitude matches. Numerical correspondences do not demonstrate illumination, architectural intention, or historical significance.
+Solar roots are mapped to the closest daily transit in time and then the following local-mean midnight. Stellar searches retain exact endpoints, sampled/refined minima, rankings and edge flags. The PyEphem sensitivity experiment instead retains its internal Delta T and interpolates daily topocentric transit altitudes. These are distinct quantities; see `docs/methods.md`.
 
-## Citation and license
+## Verification and outputs
 
-Repository: https://github.com/jbghia/great-pyramid-solar-noon
+```sh
+python -m unittest discover -s tests -p test_pipeline.py -v
+```
 
-Cite an exact reviewed commit or release. No publication release or DOI is assigned. Author metadata and a software license require owner confirmation; no license grant is implied by public visibility. Third-party data retain their own terms. The paper PDF is not redistributed. See `docs/publication_checklist.md` before updating the paper's data-availability statement.
+Twelve pipeline tests passed locally, including actual SciPy minimization and synthetic sampling tests. Historical backends and independent ancient-epoch accuracy were not evaluated in that environment. Passing tests do not establish physical alignment or regenerate manuscript tables. Real runs save CSV results and JSON configuration, input hashes and installed versions under `results/`. Transcribed reference tables are not computed outputs.
+
+For coupled inclination sensitivity, rerun solar anchors and then the stellar stage with the new windows JSON. An azimuth-only override does not change scalar solar-noon roots. CLI help documents options; `docs/reproduction_status.md` records validation scope.
+
+## Citation and licensing
+
+https://github.com/jbghia/great-pyramid-solar-noon
+
+Cite an exact reviewed snapshot. No release or archival DOI is assigned. Author metadata and licensing require owner review. Numerical correspondences alone do not establish illumination, statistical preference or architectural intention.

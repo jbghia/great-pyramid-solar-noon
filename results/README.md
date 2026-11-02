@@ -1,5 +1,3 @@
-# Results
+# Numerical outputs
 
-No network-dependent solar or full-catalogue stellar outputs have been independently regenerated for this edition. Selected manuscript references belong in `data/manuscript_reported/`, not here as purported run results.
-
-Future generated outputs should record the exact code commit, input checksums, environment versions, time scales, model configuration, catalogue row count, refinement convention, and edge flags. Commit a reviewed publication snapshot explicitly; exploratory `generated/` output is ignored by default.
+The scripts write solar roots, daily transits, exact stellar-window bounds, catalogue rankings, sampled/refined minima, inclination shifts and run metadata into stage-specific directories. These outputs require actual execution with archived inputs. No independently verified historical outputs are included by this documentation update.

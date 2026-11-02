@@ -1,21 +1,9 @@
-# Adopted manuscript conventions
+# Methods
 
-This document summarizes manuscript inputs; it does not claim that each supplied script implements them consistently.
+Adopted inputs: latitude 29.9792 degrees N, longitude 31.1342 degrees E, elevations 45.0000 and 39.6078 degrees; not new measurements or uncertainty estimates. Azimuth is north through east, default 180 degrees.
 
-- Giza latitude: 29.9792 degrees N; longitude: 31.1342 degrees E.
-- King's southern shaft reference inclination: 45.0000 degrees.
-- Queen's southern shaft provisional inclination: 39.6078 degrees.
-- Stellar directional comparison assumes azimuth 180 degrees, not a survey measurement.
-- Solar quantity: geometric solar-centre meridian altitude.
-- Continuous solar-root search: JD(TT) 790335.5 through 790475.5.
-- Manuscript adopted Delta T: 61,033 seconds.
-- Calendar: proleptic Julian, astronomical years -2549 and -2548, corresponding to 2550 and 2549 BCE.
-- Inclination sensitivity band: +/-0.200 degree, not a confidence interval.
-- Stellar window: 23:00 on the previous local date through 01:00 on the date labeling central local mean midnight.
-- Open search: manuscript reports 93 Hipparcos objects with V < 2.5; this count is not independently checked here.
+Solar coordinates are Skyfield apparent geocentric true-equator/equinox-of-date. Compare 90 - abs(latitude - declination), without refraction or solar parallax. Bracket daily and bisect continuous TT roots to a numerical 0.001 s tolerance, not physical accuracy. Solve daily apparent hour angle with GAST/UT1 and a consistently configured fixed TT-UT1 offset. Select the nearest transit IN TIME and its following local-mean midnight; export the exact +/-1-hour UT1 bounds. Dates are proleptic Julian, not UTC or Egyptian civil dates.
 
-For a south-culminating object, h = 90 - latitude + declination. Therefore required declination = inclination + latitude - 90: -15.0208 degrees for King's and -20.4130 degrees for Queen's.
+Use one archived stellar catalogue with explicit epochs/proper motions. Skyfield stellar directions are apparent topocentric, no refraction, with parallax and radial velocity zero. Sample exact endpoints and refine local and boundary-adjacent brackets in elapsed seconds; local unimodality is assumed. Retain both sampled and refined separations and edge flags. Kernel hashes must agree across stages.
 
-The same relationship applies to the Sun and a star. Solar roots do not independently validate a stellar altitude match. The dates and midnight window additionally constrain right ascension.
-
-The adopted geometry does not include a measured shaft azimuth, a complete shaft centerline, obstruction analysis, or optical transmission model.
+PyEphem dates are UT and its internal Delta T is reported. Resume one second after each transit; reject nonconsecutive spacing. Interpolate daily topocentric altitudes. These crossings are not equivalent to continuous geocentric roots. Changing inclination requires rerunning both main stages; azimuth alone does not change scalar noon roots. Physical illumination needs additional geometry and obstruction analysis.

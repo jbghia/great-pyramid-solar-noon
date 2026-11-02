@@ -1,7 +1,7 @@
 cff-version: 1.2.0
-message: "Please cite an exact reviewed commit or release. This edition preserves supplied code and documents reproduction gaps; it is not a verified reproduction of the manuscript."
-title: "Great Pyramid solar-noon correspondences: companion code and reproducibility audit"
+message: "Please cite the exact reviewed commit or release used for your calculations."
+title: "Great Pyramid solar-noon altitude correspondences"
 type: software
 repository-code: "https://github.com/jbghia/great-pyramid-solar-noon"
 url: "https://github.com/jbghia/great-pyramid-solar-noon"
-abstract: "Companion materials for solar-noon altitude correspondences of the Great Pyramid's southern shafts. Original scripts, documented model discrepancies, and offline checks. Author metadata and a publication release remain to be confirmed."
+abstract: "Research software for solar meridian-altitude roots, solar-selected nighttime stellar comparisons, and inclination sensitivity. Numerical tests are distinct from independent astronomical validation."

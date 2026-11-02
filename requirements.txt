@@ -1,6 +1,4 @@
-# Optional research dependencies inferred from imports, not original pinned versions.
-# Offline audit and unittest checks use only the Python standard library.
-skyfield
-astroquery
-numpy
-ephem
+# Direct runtime API targets; not a complete environment lockfile.
+skyfield>=1.49,<2
+scipy>=1.10,<2
+ephem>=4.1,<5

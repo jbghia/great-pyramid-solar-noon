@@ -1,0 +1,18 @@
+{
+  "script_sha256": "4358c685f6eeb65b31ba1c8523caa73ccb5b8ebfb5a57235fec11ec2f632d98a",
+  "ephem": "4.2.1",
+  "latitude_deg": 29.9792,
+  "longitude_deg_east": 31.1342,
+  "interval_jd_ut": [
+    790334.5,
+    790475.5
+  ],
+  "primary_deg": 39.6078,
+  "alternative_deg": 40.0,
+  "band_deg": 0.2,
+  "samples": 141,
+  "time_scale": "PyEphem UT; internal Delta T retained and reported",
+  "quantity": "airless apparent topocentric solar-center transit altitude",
+  "method": "linear interpolation of consecutive daily transits",
+  "historical_accuracy": "not independently validated"
+}

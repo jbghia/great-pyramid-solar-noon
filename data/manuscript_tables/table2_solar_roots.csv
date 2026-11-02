@@ -1,0 +1,5 @@
+chamber,correspondence,inclination_deg,root_jd_tt,root_jd_ut1,stellar_window_label,source
+Kings,1,45.0000,790360.663445,790359.957045,22 Nov 2550 BCE,results/solar/solar_roots.csv; results/solar/stellar_windows.json
+Kings,2,45.0000,790461.445252,790460.738852,02 Mar 2549 BCE,results/solar/solar_roots.csv; results/solar/stellar_windows.json
+Queens,1,39.6078,790379.788764,790379.082363,11 Dec 2550 BCE,results/solar/solar_roots.csv; results/solar/stellar_windows.json
+Queens,2,39.6078,790441.487451,790440.781050,11 Feb 2549 BCE,results/solar/solar_roots.csv; results/solar/stellar_windows.json

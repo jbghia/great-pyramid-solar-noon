@@ -1,7 +1,25 @@
 cff-version: 1.2.0
-message: "Please cite the exact reviewed commit or release used for your calculations."
+message: "If you use this software or its results, please cite it using the metadata below and state the exact version or commit used."
 title: "Great Pyramid solar-noon altitude correspondences"
 type: software
+authors:
+  - family-names: "Baur"
+    given-names: "Jenny"
+version: "1.0.0"
+date-released: "2026-11-03"
+license: MIT
 repository-code: "https://github.com/jbghia/great-pyramid-solar-noon"
 url: "https://github.com/jbghia/great-pyramid-solar-noon"
-abstract: "Research software for solar meridian-altitude roots, solar-selected nighttime stellar comparisons, and inclination sensitivity. Numerical tests are distinct from independent astronomical validation."
+abstract: >-
+  Research code and archived outputs for computing the dates on which the
+  Sun's airless meridian altitude at Giza equals adopted inclinations of the
+  Great Pyramid's southern shafts (JPL DE422 via Skyfield), the resulting
+  midnight stellar comparisons with the Hipparcos catalogue, and a PyEphem
+  inclination-sensitivity test for the Queen's Chamber shaft.
+keywords:
+  - archaeoastronomy
+  - Great Pyramid
+  - solar noon
+  - ephemeris
+  - Skyfield
+  - Hipparcos

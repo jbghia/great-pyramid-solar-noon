@@ -1,0 +1,5 @@
+star,case_id,window_label,separation_deg,altitude_residual_deg,azimuth_residual_deg,rank,window_edge,source
+Alnilam,Kings_1,22 Nov 2550 BCE,0.0251,+0.0251,-0.0000,1,False,results/stellar/historical_targets.csv
+Alnitak,Kings_1,22 Nov 2550 BCE,0.2732,-0.2732,-0.0000,2,False,results/stellar/historical_targets.csv
+Mintaka,Kings_1,22 Nov 2550 BCE,0.5049,+0.5049,+0.0000,3,False,results/stellar/historical_targets.csv
+Sirius,Queens_1,11 Dec 2550 BCE,0.5540,-0.5540,-0.0000,1,False,results/stellar/historical_targets.csv

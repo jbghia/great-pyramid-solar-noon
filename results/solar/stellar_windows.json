@@ -1,0 +1,77 @@
+{
+  "schema": "pyramid-windows-v2",
+  "metadata": {
+    "kernel_sha256": "1c9725e0f7d05a5f881dfd8813641aa276a0f3923361e286dc421b59ea49f94e",
+    "skyfield": "1.55",
+    "latitude_deg": 29.9792,
+    "longitude_deg_east": 31.1342,
+    "delta_t_seconds": 61033.0,
+    "delta_t_model": "fixed TT minus UT1",
+    "calendar": "proleptic Julian",
+    "solar_frame": "apparent geocentric, true equator/equinox of date; no refraction/parallax",
+    "historical_accuracy": "not independently validated",
+    "script_sha256": "8ac3ff93a47db9ad4f1ae646483d306bc68c1b48fff9bd376fd397dad53386db",
+    "modern_sanity_run": false,
+    "root_tolerance_seconds": 0.001,
+    "noon_selection": "closest transit in TIME, then following local mean midnight",
+    "inclination_band_deg": 0.2,
+    "search_interval_jd_tt": [
+      790335.5,
+      790475.5
+    ],
+    "reference_elevations_deg": [
+      45.0,
+      39.6078
+    ]
+  },
+  "windows": [
+    {
+      "case_id": "Kings_1",
+      "chamber": "Kings",
+      "elevation_deg": 45.0,
+      "azimuth_deg": 180.0,
+      "root_jd_tt": 790360.6634451486,
+      "selected_noon_jd_ut1": 790359.9094155984,
+      "center_jd_ut1": 790360.4135161111,
+      "start_jd_ut1": 790360.3718494445,
+      "end_jd_ut1": 790360.4551827777,
+      "local_midnight_label": "22-11-2550 BCE 00:00:00 local mean solar time"
+    },
+    {
+      "case_id": "Kings_2",
+      "chamber": "Kings",
+      "elevation_deg": 45.0,
+      "azimuth_deg": 180.0,
+      "root_jd_tt": 790461.4452524818,
+      "selected_noon_jd_ut1": 790460.9273171009,
+      "center_jd_ut1": 790461.4135161111,
+      "start_jd_ut1": 790461.3718494445,
+      "end_jd_ut1": 790461.4551827777,
+      "local_midnight_label": "02-03-2549 BCE 00:00:00 local mean solar time"
+    },
+    {
+      "case_id": "Queens_1",
+      "chamber": "Queens",
+      "elevation_deg": 39.6078,
+      "azimuth_deg": 180.0,
+      "root_jd_tt": 790379.788763795,
+      "selected_noon_jd_ut1": 790378.9117136629,
+      "center_jd_ut1": 790379.4135161111,
+      "start_jd_ut1": 790379.3718494445,
+      "end_jd_ut1": 790379.4551827777,
+      "local_midnight_label": "11-12-2550 BCE 00:00:00 local mean solar time"
+    },
+    {
+      "case_id": "Queens_2",
+      "chamber": "Queens",
+      "elevation_deg": 39.6078,
+      "azimuth_deg": 180.0,
+      "root_jd_tt": 790441.4874507971,
+      "selected_noon_jd_ut1": 790440.9273044498,
+      "center_jd_ut1": 790441.4135161111,
+      "start_jd_ut1": 790441.3718494445,
+      "end_jd_ut1": 790441.4551827777,
+      "local_midnight_label": "11-02-2549 BCE 00:00:00 local mean solar time"
+    }
+  ]
+}

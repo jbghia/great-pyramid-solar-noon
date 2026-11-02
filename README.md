@@ -1,38 +1,73 @@
 # Great Pyramid solar-noon correspondences
 
-Research software for solar meridian-altitude dates at Giza and stellar comparisons on the resulting nighttime windows.
+Research code and archived results for the paper *Solar-Noon Altitude Correspondences for the South-Directed Shafts of the Great Pyramid* (Jenny Baur, in preparation).
 
-## Run
+The code computes:
 
-Use Python 3.10+ and keep the three root scripts together:
+1. the instants in 2550–2549 BCE at which the Sun's airless meridian altitude at Giza equals the adopted inclinations of the southern shafts (King's Chamber 45.0000°, Queen's Chamber 39.6078°), with ±0.2° sensitivity windows;
+2. the apparent solar noon closest to each root and the following local-mean-midnight window (23:00–01:00);
+3. the angular separation of all 93 Hipparcos stars with V < 2.5 from the idealized due-south shaft direction in each window;
+4. a PyEphem test of how the Queen's Chamber dates shift if the inclination is 40.0000° instead of 39.6078°.
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `pyramid_solar_alignment.py` | Solar roots, sensitivity boundaries, daily noons, stellar search windows |
+| `stellar_alignment_search.py` | Open catalogue search and predefined targets (Orion's Belt, Sirius) |
+| `queens_chamber_solar_robustness.py` | PyEphem inclination-sensitivity test |
+| `results/` | Archived outputs of the run reported in the paper, with `SHA256SUMS` |
+| `data/` | Input-file instructions and the paper's key tables as CSV |
+| `docs/` | Method notes, paper-to-code mapping, reproduction record |
+| `original/` | Earlier preserved script versions (not used for the published results) |
+| `tests/` | Offline regression tests |
+
+## Requirements
+
+Python 3.12 or newer (required by SciPy 1.18) and the exact package versions in `requirements.txt`:
 
 ```sh
 python -m pip install -r requirements.txt
+```
+
+Two input files are needed; neither is downloaded automatically (see `data/README.md`):
+
+- the JPL DE422 kernel `de422.bsp` (SHA-256 `1c9725e0f7d05a5f881dfd8813641aa276a0f3923361e286dc421b59ea49f94e`);
+- a CSV extract of the Hipparcos main catalogue (VizieR I/239) with V < 2.5.
+
+## Running
+
+```sh
 python pyramid_solar_alignment.py --ephemeris data/de422.bsp
 python stellar_alignment_search.py --ephemeris data/de422.bsp --catalogue data/hipparcos.csv --windows-json results/solar/stellar_windows.json
 python queens_chamber_solar_robustness.py
 ```
 
-Supply a local historical-coverage BSP and archived catalogue CSV. No data are downloaded or substituted. Required columns: HIP, RAICRS, DEICRS, pmRA, pmDE, Vmag. Optional epoch_jyear defaults to 1991.25; name is a label. ICRS positions are decimal degrees; proper motions are mas/year, with pmRA including cos(dec).
+Each stage writes CSV results and a `run_metadata.json` (script hash, input hashes, package versions, settings) into `results/solar/`, `results/stellar/` and `results/queen_sensitivity/`. Run `--help` on any script for all options.
 
-## Model
+## Model summary
 
-Skyfield evaluates apparent geocentric solar coordinates and apparent topocentric stellar directions without refraction. Solar parallax is excluded; stellar parallax and radial velocity are zero. The main stages share the kernel and fixed TT-UT1, 61,033 s by default. This is not a compact Meeus geometric approximation. The manuscript must describe the actual executed model.
+- **Sun:** apparent geocentric declination from JPL DE422 via Skyfield (true equator and equinox of date); altitude h = 90° − |φ − δ|; no refraction or solar parallax. Roots are found by daily bracketing and bisection to 0.001 s.
+- **Time:** fixed TT − UT1 = 61 033 s; proleptic Julian calendar; local mean solar time = UT1 + longitude/15°.
+- **Noon and night:** of the apparent noons on three neighbouring UT1 days, the one closest in time to the root is selected; the search window is the following local mean midnight ± 1 h.
+- **Stars:** Hipparcos ICRS positions (J1991.25) and proper motions, parallax and radial velocity set to zero; apparent topocentric, airless directions from Skyfield; 60 s grid plus SciPy bounded refinement (0.01 s). Minima at the exact window edge are flagged.
+- **PyEphem test:** 141 consecutive daily transits, airless topocentric altitudes, PyEphem's internal ΔT, linear interpolation.
 
-Solar roots are mapped to the closest daily transit in time and then the following local-mean midnight. Stellar searches retain exact endpoints, sampled/refined minima, rankings and edge flags. The PyEphem sensitivity experiment instead retains its internal Delta T and interpolates daily topocentric transit altitudes. These are distinct quantities; see `docs/methods.md`.
+Details are in `docs/methods.md`. These are numerical correspondences under adopted inputs; they do not by themselves establish illumination, intention or statistical significance.
 
-## Verification and outputs
+## Reproduction status
+
+The archived results were produced with commit `2331431` and the package versions above. On 2 November 2026 the solar and PyEphem stages were re-run independently with a freshly downloaded DE422 kernel (matching checksum) and reproduced every output file exactly. The stellar stage depends on the archived catalogue file and was checked for internal consistency. See `docs/reproduction_status.md`.
+
+## Tests
 
 ```sh
-python -m unittest discover -s tests -p test_pipeline.py -v
+python -m unittest discover -s tests -v
+python scripts/audit_sources.py
 ```
 
-Twelve pipeline tests passed locally, including actual SciPy minimization and synthetic sampling tests. Historical backends and independent ancient-epoch accuracy were not evaluated in that environment. Passing tests do not establish physical alignment or regenerate manuscript tables. Real runs save CSV results and JSON configuration, input hashes and installed versions under `results/`. Transcribed reference tables are not computed outputs.
+The tests check calendar conversions, root finding, window construction, sampling and minimization logic. They are software checks, not astronomical validation.
 
-For coupled inclination sensitivity, rerun solar anchors and then the stellar stage with the new windows JSON. An azimuth-only override does not change scalar solar-noon roots. CLI help documents options; `docs/reproduction_status.md` records validation scope.
+## Citation and licence
 
-## Citation and licensing
-
-https://github.com/jbghia/great-pyramid-solar-noon
-
-Cite an exact reviewed snapshot. No release or archival DOI is assigned. Author metadata and licensing require owner review. Numerical correspondences alone do not establish illumination, statistical preference or architectural intention.
+Please cite the archived release (see `CITATION.cff`) and state the version or commit you used. The code is released under the MIT licence (`LICENSE`). Hipparcos and JPL data remain subject to their providers' terms.

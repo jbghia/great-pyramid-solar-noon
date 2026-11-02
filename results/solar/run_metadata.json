@@ -1,0 +1,24 @@
+{
+  "kernel_sha256": "1c9725e0f7d05a5f881dfd8813641aa276a0f3923361e286dc421b59ea49f94e",
+  "skyfield": "1.55",
+  "latitude_deg": 29.9792,
+  "longitude_deg_east": 31.1342,
+  "delta_t_seconds": 61033.0,
+  "delta_t_model": "fixed TT minus UT1",
+  "calendar": "proleptic Julian",
+  "solar_frame": "apparent geocentric, true equator/equinox of date; no refraction/parallax",
+  "historical_accuracy": "not independently validated",
+  "script_sha256": "8ac3ff93a47db9ad4f1ae646483d306bc68c1b48fff9bd376fd397dad53386db",
+  "modern_sanity_run": false,
+  "root_tolerance_seconds": 0.001,
+  "noon_selection": "closest transit in TIME, then following local mean midnight",
+  "inclination_band_deg": 0.2,
+  "search_interval_jd_tt": [
+    790335.5,
+    790475.5
+  ],
+  "reference_elevations_deg": [
+    45.0,
+    39.6078
+  ]
+}

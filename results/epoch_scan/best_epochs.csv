@@ -1,0 +1,9 @@
+case_id,chamber,inclination_deg,inclination_source,HIP,name,best_year_astronomical,best_year_label,method,residual_at_reference_deg,residual_change_deg_per_century,min_abs_residual_in_range_deg
+Kings_adopted,Kings,45.0,adopted reference value (paper),25930,Mintaka,-2648.6,2650 BCE,zero crossing,0.5048715345309063,0.5032160569368681,0.0022969323759554072
+Kings_adopted,Kings,45.0,adopted reference value (paper),26311,Alnilam,-2554.1,2555 BCE,zero crossing,0.025085634713619243,0.4969594998610434,0.0003072340075718216
+Kings_adopted,Kings,45.0,adopted reference value (paper),26727,Alnitak,-2493.1,2494 BCE,zero crossing,-0.27315358528890954,0.49045924932186796,0.0004748052384755397
+Kings_Petrie,Kings,45.21666666666667,"Petrie (1883), 45 deg 13 arcmin",25930,Mintaka,-2606.2,2607 BCE,zero crossing,0.2882048678642377,0.5032160569368681,0.0009152379517018971
+Kings_Petrie,Kings,45.21666666666667,"Petrie (1883), 45 deg 13 arcmin",26311,Alnilam,-2510.2,2511 BCE,zero crossing,-0.19158103195304932,0.4969594998610434,0.0006728815804635246
+Kings_Petrie,Kings,45.21666666666667,"Petrie (1883), 45 deg 13 arcmin",26727,Alnitak,-2447.9,2449 BCE,zero crossing,-0.4898202519555781,0.49045924932186796,0.0005318230326025741
+Queens_adopted,Queens,39.6078,adopted reference value (paper),32349,Sirius,-2369.3,2370 BCE,zero crossing,-0.5539999695044884,0.3152071777505665,0.0010631174914692565
+Queens_40,Queens,40.0,"alternative value (paper, Section 3.5)",32349,Sirius,-2236.2,2237 BCE,zero crossing,-0.9461999695044909,0.3152071777505665,0.0005894614505024265

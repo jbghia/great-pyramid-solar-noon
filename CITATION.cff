@@ -6,10 +6,10 @@ authors:
   - family-names: "Baur"
     given-names: "Jenny"
     orcid: "https://orcid.org/0009-0009-8855-211X"
-version: "1.0.0"
+version: "1.1.0"
 date-released: "2026-11-03"
 license: MIT
-doi: "10.5281/zenodo.23900532"
+doi: "10.5281/zenodo.23900531"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.23900532"
@@ -23,8 +23,9 @@ abstract: >-
   Research code and archived outputs for computing the dates on which the
   Sun's airless meridian altitude at Giza equals adopted inclinations of the
   Great Pyramid's southern shafts (JPL DE422 via Skyfield), the resulting
-  midnight stellar comparisons with the Hipparcos catalogue, and a PyEphem
-  inclination-sensitivity test for the Queen's Chamber shaft.
+  midnight stellar comparisons with the Hipparcos catalogue, a PyEphem
+  inclination-sensitivity test for the Queen's Chamber shaft, and an epoch
+  scan of the stellar meridian-altitude residuals for 2850-2150 BCE.
 keywords:
   - archaeoastronomy
   - Great Pyramid

@@ -12,6 +12,9 @@ license: MIT
 doi: "10.5281/zenodo.23900531"
 identifiers:
   - type: doi
+    value: "10.5281/zenodo.23920012"
+    description: "Version 1.1.0"
+  - type: doi
     value: "10.5281/zenodo.23900532"
     description: "Version 1.0.0"
   - type: doi

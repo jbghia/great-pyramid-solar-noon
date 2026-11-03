@@ -6,6 +6,7 @@
 - Add archived outputs in `results/epoch_scan/` (checksums added to `SHA256SUMS`), the plotting script `scripts/plot_epoch_scan.py` and `requirements-plot.txt`.
 - Add `docs/epoch_sensitivity.md` and offline tests, including a check that the scan reproduces the archived Table 8 residuals at 2550 BCE.
 - Earlier scripts and archived results are unchanged.
+- Archived on Zenodo: https://doi.org/10.5281/zenodo.23920012
 
 ## 1.0.0 – 2026-11-03
 

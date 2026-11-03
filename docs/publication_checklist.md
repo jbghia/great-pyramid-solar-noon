@@ -5,6 +5,6 @@
 - [x] Solar and PyEphem stages independently re-executed with identical results
 - [x] Paper tables and figures generated from `results/` (see `paper_repository_mapping.md`)
 - [x] Licence (MIT) and citation metadata (`CITATION.cff`)
-- [ ] Enable the repository in Zenodo, then publish release v1.0.0 to obtain a DOI
-- [ ] Add the DOI to the README, `CITATION.cff` and the paper's Data availability section
-- [ ] Optional: archive the Hipparcos extract with the release so the stellar stage can be re-run byte-for-byte
+- [x] Release v1.0.0 archived on Zenodo: version DOI 10.5281/zenodo.23900532, concept DOI 10.5281/zenodo.23900531
+- [x] DOI and ORCID added to the README and `CITATION.cff`
+- [x] Hipparcos extract attached to the v1.0.0 release

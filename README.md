@@ -1,6 +1,8 @@
 # Great Pyramid solar-noon correspondences
 
-Research code and archived results for the paper *Solar-Noon Altitude Correspondences for the South-Directed Shafts of the Great Pyramid* (Jenny Baur, in preparation).
+[![DOI](https://zenodo.org/badge/1442216677.svg)](https://doi.org/10.5281/zenodo.23900531)
+
+Research code and archived results for the paper *Solar-Noon Altitude Correspondences for the South-Directed Shafts of the Great Pyramid* (Jenny Baur, [ORCID 0009-0009-8855-211X](https://orcid.org/0009-0009-8855-211X), in preparation).
 
 The code computes:
 
@@ -70,4 +72,10 @@ The tests check calendar conversions, root finding, window construction, samplin
 
 ## Citation and licence
 
-Please cite the archived release (see `CITATION.cff`) and state the version or commit you used. The code is released under the MIT licence (`LICENSE`). Hipparcos and JPL data remain subject to their providers' terms.
+Version 1.0.0 is archived on Zenodo:
+
+> Baur, J. (2026). *Great Pyramid solar-noon altitude correspondences* (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23900532
+
+The DOI [10.5281/zenodo.23900531](https://doi.org/10.5281/zenodo.23900531) always resolves to the latest version. Please cite the version you used; metadata are in `CITATION.cff`. The v1.0.0 release also includes the exact Hipparcos extract used for the archived run (`hipparcos_vmag_lt_2.5.csv`).
+
+The code is released under the MIT licence (`LICENSE`). Hipparcos and JPL data remain subject to their providers' terms.

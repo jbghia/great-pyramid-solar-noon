@@ -18,7 +18,7 @@ Place both files in `data/` (they are ignored by git).
 - Units: ICRS positions in decimal degrees; proper motions in mas/yr, `pmRA` includes cos δ
 - SHA-256 of the file used for the archived run: `264d86dc833daef792cf5107c4894c94f8984046607d7904be4764aa78b20f88`
 
-A re-downloaded extract can differ byte-for-byte (formatting, column order) while containing the same values, so its checksum may not match. The list of selected HIP numbers is recorded in `results/stellar/run_metadata.json`.
+The exact file used for the archived run is attached to the [v1.0.0 release](https://github.com/jbghia/great-pyramid-solar-noon/releases/tag/v1.0.0) as `hipparcos_vmag_lt_2.5.csv` (checksum verified). A freshly re-downloaded extract can differ byte-for-byte (formatting, column order) while containing the same values, so its checksum may not match. The list of selected HIP numbers is recorded in `results/stellar/run_metadata.json`.
 
 ## Paper tables
 

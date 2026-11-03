@@ -5,9 +5,18 @@ type: software
 authors:
   - family-names: "Baur"
     given-names: "Jenny"
+    orcid: "https://orcid.org/0009-0009-8855-211X"
 version: "1.0.0"
 date-released: "2026-11-03"
 license: MIT
+doi: "10.5281/zenodo.23900532"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23900532"
+    description: "Version 1.0.0"
+  - type: doi
+    value: "10.5281/zenodo.23900531"
+    description: "All versions (concept DOI)"
 repository-code: "https://github.com/jbghia/great-pyramid-solar-noon"
 url: "https://github.com/jbghia/great-pyramid-solar-noon"
 abstract: >-

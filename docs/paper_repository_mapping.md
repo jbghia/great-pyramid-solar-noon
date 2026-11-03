@@ -10,6 +10,7 @@
 | Table 7 and Section 4.1 (Queen's Chamber sensitivity) | `results/queen_sensitivity/inclination_shifts.csv`, `inclination_crossings.csv` |
 | Table 8 (predefined targets) | `results/stellar/historical_targets.csv` |
 | Tables 9–12 (open catalogue search) | `results/stellar/ranked_stellar_results.csv` (top 10 by rank per case) |
+| Epoch sensitivity (proposed addition) | `results/epoch_scan/best_epochs.csv`, `target_residuals_by_year.csv`, `catalogue_baseline_by_year.csv`, `epoch_scan.png` |
 | Data availability (hashes) | `docs/reproduction_status.md` |
 
 Table numbers refer to the compiled manuscript of 3 November 2026.

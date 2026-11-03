@@ -1,0 +1,77 @@
+{
+  "kernel_sha256": "1c9725e0f7d05a5f881dfd8813641aa276a0f3923361e286dc421b59ea49f94e",
+  "skyfield": "1.55",
+  "latitude_deg": 29.9792,
+  "longitude_deg_east": 31.1342,
+  "delta_t_seconds": 61033.0,
+  "delta_t_model": "fixed TT minus UT1",
+  "calendar": "proleptic Julian",
+  "solar_frame": "apparent geocentric, true equator/equinox of date; no refraction/parallax",
+  "historical_accuracy": "not independently validated",
+  "script_sha256": "1a925e283b8617097a77355083c38d0dd1380ea8172951344c954d38b87fc160",
+  "catalogue_sha256": "264d86dc833daef792cf5107c4894c94f8984046607d7904be4764aa78b20f88",
+  "count": 93,
+  "excluded_by_magnitude": 0,
+  "strict_Vmag_limit": 2.5,
+  "years_astronomical": [
+    -2849,
+    -2149
+  ],
+  "year_step": 1,
+  "reference_year_astronomical": -2549,
+  "cases": [
+    {
+      "case_id": "Kings_adopted",
+      "chamber": "Kings",
+      "inclination_deg": 45.0,
+      "source": "adopted reference value (paper)",
+      "reference_night_month_day": [
+        11,
+        22
+      ]
+    },
+    {
+      "case_id": "Kings_Petrie",
+      "chamber": "Kings",
+      "inclination_deg": 45.21666666666667,
+      "source": "Petrie (1883), 45 deg 13 arcmin",
+      "reference_night_month_day": [
+        11,
+        22
+      ]
+    },
+    {
+      "case_id": "Queens_adopted",
+      "chamber": "Queens",
+      "inclination_deg": 39.6078,
+      "source": "adopted reference value (paper)",
+      "reference_night_month_day": [
+        12,
+        11
+      ]
+    },
+    {
+      "case_id": "Queens_40",
+      "chamber": "Queens",
+      "inclination_deg": 40.0,
+      "source": "alternative value (paper, Section 3.5)",
+      "reference_night_month_day": [
+        12,
+        11
+      ]
+    }
+  ],
+  "evaluation_instant": "00:00 local mean solar time (UT1 + longitude/15 h) on the reference calendar night of each year, proleptic Julian",
+  "quantity": "apparent geocentric declination of date; meridian altitude 90 - |phi - dec|; residual = altitude - inclination",
+  "interpretation": "separation from an idealized due-south direction at meridian transit; no right-ascension or time-window filter",
+  "best_epoch": "linear interpolation of residual zero crossings between consecutive years",
+  "baseline_bands_deg": [
+    0.1,
+    0.2
+  ],
+  "baseline_selection": "catalogue stars with dec < latitude (south culmination)",
+  "slope_fit": "least squares over reference year +/- 50 years",
+  "parallax_mas": 0,
+  "radial_km_per_s": 0,
+  "scipy": "1.18.1"
+}

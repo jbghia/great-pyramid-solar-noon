@@ -9,4 +9,4 @@
 - [x] DOI and ORCID added to the README and `CITATION.cff`
 - [x] Hipparcos extract attached to the v1.0.0 release
 - [x] Epoch-sensitivity scan added (version 1.1.0, `results/epoch_scan/`)
-- [ ] Release v1.1.0 on GitHub; add the new Zenodo version DOI to the README and `CITATION.cff`
+- [x] Release v1.1.0 archived on Zenodo: version DOI 10.5281/zenodo.23920012

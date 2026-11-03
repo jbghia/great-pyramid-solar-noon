@@ -79,10 +79,10 @@ The tests check calendar conversions, root finding, window construction, samplin
 
 ## Citation and licence
 
-Version 1.0.0 (the code and results of the paper's principal analysis) is archived on Zenodo:
+The code and results are archived on Zenodo. To cite the current version, which includes the epoch-sensitivity scan:
 
-> Baur, J. (2026). *Great Pyramid solar-noon altitude correspondences* (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23900532
+> Baur, J. (2026). *Great Pyramid solar-noon altitude correspondences* (Version 1.1.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.23920012
 
-The DOI [10.5281/zenodo.23900531](https://doi.org/10.5281/zenodo.23900531) always resolves to the latest version. Version 1.1.0 adds the epoch-sensitivity scan; its version DOI is assigned by Zenodo when the release is published. Please cite the version you used; metadata are in `CITATION.cff`. The v1.0.0 release also includes the exact Hipparcos extract used for the archived run (`hipparcos_vmag_lt_2.5.csv`).
+Version 1.0.0, the code and results of the paper's principal analysis without the epoch scan, has the DOI [10.5281/zenodo.23900532](https://doi.org/10.5281/zenodo.23900532). The DOI [10.5281/zenodo.23900531](https://doi.org/10.5281/zenodo.23900531) always resolves to the latest version. Please cite the version you used; metadata are in `CITATION.cff`. The v1.0.0 release also includes the exact Hipparcos extract used for the archived run (`hipparcos_vmag_lt_2.5.csv`).
 
 The code is released under the MIT licence (`LICENSE`). Hipparcos and JPL data remain subject to their providers' terms.
